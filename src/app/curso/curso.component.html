@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="box closeSettings" id="box" itemid="box">
+        <div class="row">
+            <div class="col col-md-10">
+                <h4 class="m-4">Curso de Angular</h4>
+            </div>
+            <div class="col col-md-2">
+                <a class="btn btn-warning m-4" (click)="settings()">Abrir</a>
+            </div>
+        </div>
+        <div class="mb-5">
+            <a class="boton botones openAsistencia" (click)='openSettings(".openAsistencia")'>Asistencias</a>
+            <a class="boton openApro" (click)='openSettings(".openApro")' (click)='cambiarEstadoAsis()'>Arobacion</a>
+            <a class="boton openIngre" (click)='openSettings(".openIngre")'>Ingresantes</a>
+            <a class="boton openCaidos" (click)='openSettings(".openCaidos")'>Caidos</a>
+        </div>
+        <div *ngIf='estados.openAsis'>
+            <div class="m-4">
+                <h3>Promedio de Asistencias</h3>
+                <ul>
+                    <li>Hola</li>
+                    <li>ChaU</li>
+                    <li>ASDSA</li>
+                    <li>12313</li>
+                </ul>
+            </div>
+        </div>
+        <div *ngIf="estados.openApro">
+            <p>Aprobacion</p>
+        </div>
+    </div>
+</div>

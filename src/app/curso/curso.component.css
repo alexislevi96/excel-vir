@@ -1,0 +1,29 @@
+.box {
+    box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 2px 6px 2px rgb(60 64 67 / 15%);
+    border-radius: 0.5rem;
+    overflow: hidden;
+    width: 100%;
+}
+
+.openSettings{
+    height: auto;
+}
+.closeSettings{
+    height: 80px;
+}
+.botones{
+    border-bottom: 3px solid lightblue;
+    border-radius: 5px 5px;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+}
+.boton{
+    color: black;
+    margin-left: 30px;
+    text-decoration-style: none;
+    text-decoration-line: none;
+    padding: 0px 10px;
+}
+.boton:hover {
+    cursor: pointer;
+}
