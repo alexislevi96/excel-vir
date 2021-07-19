@@ -53,13 +53,15 @@
                         <li>Jose Garbanzo: 23</li>
                         <li>Jose Garbanzo: 10</li>
                     </ul>
+                    <div>
+                        <ul *ngFor="let n of _data.data">
+                            <li>{{ n.Nombre }}</li>
+                          </ul>
+                    </div>
                 </div>
                 <!-- <ul *ngFor="let n of  | async">
                     <li>{{ n.Nombre }} {{n.Edad}} {{n.Pastores}}</li>
                 </ul> -->
-                <ul appReadexcel readexcel *ngFor="let n of _data.jsonData.excelObservable | async">
-                <li>{{ n.Nombre }} {{n.Edad}} {{n.Pastores}}</li>
-                </ul>
             </div>
         </div>
         <div *ngIf='openApro'>

@@ -4,19 +4,18 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CursoComponent } from './curso/curso.component';
-import { ReadexcelDirective } from './dataexcel/readexcel.directive';
+import { DataService } from './servicios/data.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CursoComponent,
-    ReadexcelDirective
+    CursoComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
