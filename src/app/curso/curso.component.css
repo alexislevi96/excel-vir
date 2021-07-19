@@ -27,3 +27,6 @@
 .boton:hover {
     cursor: pointer;
 }
+.centrado{
+    text-align: center;
+}

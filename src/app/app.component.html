@@ -1,11 +1,14 @@
 <h1 class="text-center mt-5">Excel Vir</h1>
 
-<app-curso></app-curso>
+
 <div style="text-align: center;">
   <input type="file" class="in mt-3" appReadexcel #readexcel="readexcel" (eventEmitter)="DataFromEventEmitter($event)"
     required>
 </div>
 
-<ul *ngFor="let n of readexcel.excelObservable | async">
+<!-- <ul *ngFor="let n of readexcel.excelObservable | async">
   <li>{{ n.Nombre }} {{n.Edad}} {{n.Pastores}}</li>
-</ul>
+</ul> -->
+<div *ngIf="noFile">
+  <app-curso></app-curso>
+</div>

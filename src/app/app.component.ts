@@ -6,8 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  noFile = false;
   title = 'excel-vir';
-  DataFromEventEmitter(data:any) {
+  DataFromEventEmitter(data: any) {
     console.log(data);
+    this.noFile = !this.noFile;
   }
 }

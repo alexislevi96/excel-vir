@@ -8,13 +8,15 @@
                 <a class="btn btn-warning m-4" (click)="settings()">Abrir</a>
             </div>
         </div>
-        <div class="mb-5">
+        <hr>
+        <div class="centrado">
             <a class="boton botones openAsistencia" (click)='openSettings(".openAsistencia")'
                 (click)='cambiarEstado1()'>Asistencias</a>
             <a class="boton openApro" (click)='openSettings(".openApro")' (click)='cambiarEstado2()'>Arobacion</a>
             <a class="boton openIngre" (click)='openSettings(".openIngre")' (click)='cambiarEstado3()'>Ingresantes</a>
             <a class="boton openCaidos" (click)='openSettings(".openCaidos")' (click)='cambiarEstado4()'>Caidos</a>
         </div>
+        <hr class="">
         <div *ngIf='openAsis'>
             <div class="m-4">
                 <h3>Promedio de Asistencias</h3>
@@ -27,13 +29,22 @@
             </div>
         </div>
         <div *ngIf='openApro'>
-            <p>Aprobacion</p>
+            <div class="m-4">
+
+                <p>Aprobacion</p>
+            </div>
         </div>
         <div *ngIf='open2'>
-            <p>Estado 3</p>
+            <div class="m-4">
+
+                <p>Estado 3</p>
+            </div>
         </div>
         <div *ngIf='open3'>
-            <p>Estado 4</p>
+            <div class="m-4">
+
+                <p>Estado 4</p>
+            </div>
         </div>
     </div>
 </div>
