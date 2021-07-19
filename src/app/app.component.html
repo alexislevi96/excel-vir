@@ -1,4 +1,12 @@
 <h1 class="text-center mt-5">Excel Vir</h1>
 <div style="text-align: center;">
-  <input type="file" class="in mt-3">
+  <input type="file" class="in mt-3" 
+  appReadexcel
+  #readexcel="readexcel"
+  (eventEmitter)="DataFromEventEmitter($event)"
+  required>
 </div>
+
+<ul *ngFor="let n of readexcel.excelObservable | async">
+  <li>{{ n.Nombre }}</li>
+</ul>
