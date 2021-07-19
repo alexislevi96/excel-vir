@@ -4,11 +4,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CursoComponent } from './curso/curso.component';
+import { ReadexcelDirective } from './dataexcel/readexcel.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CursoComponent
+    CursoComponent,
+    ReadexcelDirective
   ],
   imports: [
     BrowserModule,

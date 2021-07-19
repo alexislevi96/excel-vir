@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'excel-vir';
+  DataFromEventEmitter(data:any) {
+    console.log(data);
+  }
 }

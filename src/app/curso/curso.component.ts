@@ -1,19 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-curso',
   templateUrl: './curso.component.html',
   styleUrls: ['./curso.component.css']
 })
-export class CursoComponent implements OnInit {
+export class CursoComponent {
+  openAsis = true;
+  openApro = false;
+  open2 = false;
+  open3 = false;
 
   constructor() {
   }
-  ngOnInit(): void { }
-  estados: any = {
-    openAsis: true,
-    openApro: false
-  };
   estadoSettings = false;
   // box = document.querySelector('.box');
   settings() {
@@ -27,11 +26,29 @@ export class CursoComponent implements OnInit {
         aux?.classList.remove('openSettings');
       }
   }
-  cambiarEstadoAsis() {
-    for (let item of this.estados) {
-      item = false;
-    }
-    this.estados.openApro = true;
+  cambiarEstado1() {
+    this.openAsis = true;
+    this.openApro = false;
+    this.open2 = false;
+    this.open3 = false;
+  }
+  cambiarEstado2() {
+    this.openAsis = false;
+    this.openApro = true;
+    this.open2 = false;
+    this.open3 = false;
+  }
+  cambiarEstado3() {
+    this.openAsis = false;
+    this.openApro = false;
+    this.open2 = true;
+    this.open3 = false;
+  }
+  cambiarEstado4() {
+    this.openAsis = false;
+    this.openApro = false;
+    this.open2 = false;
+    this.open3 = true;
   }
   openSettings(item: any): void {
     let aux2 = document.querySelectorAll('.boton');
