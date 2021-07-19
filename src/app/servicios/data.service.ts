@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class DataService {
 
-  noFile = false;
+  noFile = true;
   jsonData: any;
   constructor() { }
 
