@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { DataService } from './servicios/data.service';
 
 @Component({
   selector: 'app-root',
@@ -6,10 +7,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  noFile = false;
   title = 'excel-vir';
-  DataFromEventEmitter(data: any) {
-    console.log(data);
-    this.noFile = !this.noFile;
-  }
+  constructor(public _data: DataService) { }
+  // noFile = false;
+  // title = 'excel-vir';
+  // DataFromEventEmitter(data: any) {
+  //   console.log(data);
+  //   this.noFile = true;
+  // }
 }

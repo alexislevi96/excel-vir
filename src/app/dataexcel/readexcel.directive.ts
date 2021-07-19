@@ -11,7 +11,7 @@ export class ReadexcelDirective {
   excelObservable!: Observable<any>;
   @Output() eventEmitter = new EventEmitter();
 
-  constructor() {}
+  constructor() { }
 
   @HostListener('change', ['$event.target'])
   onChange(target: HTMLInputElement) {

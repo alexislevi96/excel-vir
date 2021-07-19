@@ -2,13 +2,13 @@
 
 
 <div style="text-align: center;">
-  <input type="file" class="in mt-3" appReadexcel #readexcel="readexcel" (eventEmitter)="DataFromEventEmitter($event)"
-    required>
+  <input type="file" class="in mt-3" appReadexcel #readexcel="readexcel"
+    (eventEmitter)="_data.DataFromEventEmitter($event)" required>
 </div>
 
 <!-- <ul *ngFor="let n of readexcel.excelObservable | async">
   <li>{{ n.Nombre }} {{n.Edad}} {{n.Pastores}}</li>
 </ul> -->
-<div *ngIf="noFile">
+<div *ngIf="_data.noFile">
   <app-curso></app-curso>
 </div>

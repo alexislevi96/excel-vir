@@ -1,17 +1,23 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
+import { ReadexcelDirective } from '../dataexcel/readexcel.directive';
+import { Observable, Subscriber } from 'rxjs';
+import { DataService } from '../servicios/data.service';
 
 @Component({
   selector: 'app-curso',
   templateUrl: './curso.component.html',
-  styleUrls: ['./curso.component.css']
+  styleUrls: ['./curso.component.css'],
+  providers: [DataService]
 })
 export class CursoComponent {
+
   openAsis = true;
   openApro = false;
   open2 = false;
   open3 = false;
 
-  constructor() {
+  constructor(public _data: DataService) {
+    console.log(_data.jsonData, 'holalaalala')
   }
   estadoSettings = false;
   // box = document.querySelector('.box');
