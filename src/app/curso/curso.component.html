@@ -20,9 +20,10 @@
         <div *ngIf='openAsis'>
             <div class="m-4">
                 <h3>Promedio de Asistencias</h3>
-                <ul *ngFor="let n of _data.jsonData | async">
-                    <li>{{ n.Nombre }} {{n.Edad}} {{n.Pastores}}</li>
-                </ul>
+                <!-- <ul *ngFor="let n of readexcel.excelObservable | async">
+									<li>{{ n.Nombre }} {{n.Edad}} {{n.Pastores}}</li>
+								</ul> -->
+								{{_data.data}}
             </div>
         </div>
         <div *ngIf='openApro'>

@@ -1,14 +1,30 @@
-<h1 class="text-center mt-5">Excel Vir</h1>
+<h1 class="text-center mt-4">Excel Vir</h1>
 
+<div style="text-align: center;" class="mt-4">
+  <input type="file" (change)="_data.onFileChange($event)" multiple="false" />
+</div>
 
-<div style="text-align: center;">
-  <input type="file" class="in mt-3" appReadexcel #readexcel="readexcel"
+<div *ngIf="_data.noFile" class="mt-4 mb-4">
+  <app-curso></app-curso>
+</div>
+
+<table>
+  <tbody>
+    <tr *ngFor="let row of _data.data">
+      <td *ngFor="let cell of row">
+        {{cell}}
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- <div style="text-align: center;">
+  <input type="file" class="in mt-3 mb-3" appReadexcel #readexcel="readexcel"
     (eventEmitter)="_data.DataFromEventEmitter($event)" required>
 </div>
+
+ -->
 
 <!-- <ul *ngFor="let n of readexcel.excelObservable | async">
   <li>{{ n.Nombre }} {{n.Edad}} {{n.Pastores}}</li>
 </ul> -->
-<div *ngIf="_data.noFile">
-  <app-curso></app-curso>
-</div>
