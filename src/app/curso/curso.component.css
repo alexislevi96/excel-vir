@@ -1,43 +1,51 @@
 .box {
-    box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 2px 6px 2px rgb(60 64 67 / 15%);
-    border-radius: 0.5rem;
-    overflow: hidden;
-    width: 100%;
+  box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 2px 6px 2px rgb(60 64 67 / 15%);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  width: 100%;
 }
 
-.openSettings{
-    height: auto;
+.openSettings {
+  height: auto;
 }
-.closeSettings{
-    height: 80px;
+.closeSettings {
+  height: 80px;
 }
-.botones{
-    border-bottom: 3px solid lightblue;
-    border-radius: 5px 5px;
-    border-bottom-left-radius: 2px;
-    border-bottom-right-radius: 2px;
+.botones {
+  border-bottom: 3px solid lightblue;
+  border-radius: 5px 5px;
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
 }
-.boton{
-    color: black;
-    margin-left: 30px;
-    text-decoration-style: none;
-    text-decoration-line: none;
-    padding: 0px 10px;
+.boton {
+  color: black;
+  margin-left: 30px;
+  text-decoration-style: none;
+  text-decoration-line: none;
+  padding: 0px 10px;
 }
 .boton:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
-.centrado{
-    text-align: center;
+.centrado {
+  text-align: center;
 }
-.listaAlumnos{
-    padding: 0;
-    margin-bottom: -20px;
+.listaAlumnos {
+  padding: 0;
+  margin-bottom: -20px;
 }
-.subTitulos{
-    padding: 0;
-    margin: 0;
+.subTitulos {
+  padding: 0;
+  margin: 0;
 }
-.textNegrita{
-    color: black;
+.textNegrita {
+  color: black;
+}
+.ul-student {
+  /* margin: auto; */
+  list-style-type: none;
+}
+.div-student {
+  padding: 10px;
+  margin: 0px 0px 0px;
 }

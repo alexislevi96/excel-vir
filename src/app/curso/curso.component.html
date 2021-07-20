@@ -1,81 +1,42 @@
 <div class="container">
-    <div class="box closeSettings" id="box" itemid="box">
-        <div class="row">
-            <div class="col col-md-10">
-                <h4 class="mt-4 mx-4">{{nameCourse}}</h4>
-            </div>
-            <div class="col col-md-2">
-                <a class="btn btn-warning m-4" (click)="settings()">Abrir</a>
-            </div>
-            <div class="mb-3">
-                <p class="mx-4 subTitulos">Tec: {{nameTecnology}}</p>
-                <p class="mx-4 subTitulos">Fecha: {{dateCourse}}</p>
-                <p class="mx-4 subTitulos">Profe: {{nameProfessor}}</p>
-                <p class="mx-4 subTitulos">Cantidad de alumnos: {{totalAlumnos}}</p>
-            </div>
-            <hr>
-        </div>
-        <div class="centrado">
-            <a class="boton botones openAsistencia" (click)='openSettings(".openAsistencia")'
-                (click)='cambiarEstado1()'>Asistencias</a>
-            <a class="boton openApro" (click)='openSettings(".openApro")' (click)='cambiarEstado2()'>Arobacion</a>
-            <a class="boton openIngre" (click)='openSettings(".openIngre")' (click)='cambiarEstado3()'>Ingresantes</a>
-            <a class="boton openCaidos" (click)='openSettings(".openCaidos")' (click)='cambiarEstado4()'>Caidos</a>
-        </div>
-        <hr class="">
-        <div *ngIf='openAsis'>
-            <div class="m-4" appReadexcel>
-                <!-- <h3>Promedio de Asistencias</h3> -->
-                <div class="row">
-                    <div class="col col-md-6 col-6">
-                        <div class="alert alert-success">
-                            Promedio de asistencia total:<strong class="textNegrita"> {{promAsist.toFixed(2)}}%</strong>
-                        </div>
-                    </div>
-                    <div class="col col-md-6 col-6">
-                        <div class="alert alert-danger">Total de asistencias: <strong class="textNegrita">{{totalAsist}}</strong></div>
-                    </div>
-                    <!-- <div class="col col-md-6 col-6">
-                        <p>Alumno con mas asistencias:<strong>Juan Guarnizo (40)</strong> </p>
-                    </div>
-                    <div class="col col-md-6 col-6">
-                        <p>Dias de curso: {{totalClass}}</p></div>
-                    </div> -->
-                <div>
-                    <h5>Lista de alumnos</h5>
-                        <ul *ngFor="let i of alumnos">
-                            <div class="alert alert-success" style="width: 50%;">
-
-                                <li class="listaAlumnos">{{ i.name }} ({{ i.asistencia }})</li>
-                            </div>
-                        </ul>
-                </div>
-            </div>
-        </div>
-        <div *ngIf='openApro'>
-            <div class="m-4">
-                <h3>Promedio de Aprobacion</h3>
-                <div class="row">
-                    <div class="col col-6 col-md-6">
-                        <div class="alert alert-success">Promedio del curso: <strong>6.8</strong></div>
-                    </div>
-                    <div class="col col-6 col-md-6">
-                        <div class="alert alert-light">Alumno con mejor promedio: <strong>Sofia Mersel (8.4)</strong></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div *ngIf='open2'>
-            <div class="m-4">
-
-                <p>Estado 3</p>
-            </div>
-        </div>
-        <div *ngIf='open3'>
-            <div class="m-4">
-
-                <p>Estado 4</p>
-            </div>
-        </div>
+  <div class="box closeSettings" id="box" itemid="box">
+    <div class="row">
+      <div class="col col-md-10">
+        <h4 class="mt-4 mx-4">{{ _curso.nameCourse }}</h4>
+      </div>
+      <div class="col col-md-2">
+        <a class="btn btn-warning m-4" (click)="settings()">Abrir</a>
+      </div>
+      <div class="mb-3">
+        <p class="mx-4 subTitulos">Tec: {{ _curso.nameTecnology }}</p>
+        <p class="mx-4 subTitulos">Fecha: {{ _curso.dateCourse }}</p>
+        <p class="mx-4 subTitulos">Profe: {{ _curso.nameProfessor }}</p>
+        <p class="mx-4 subTitulos">Cantidad de alumnos: {{ _curso.totalAlumnos }}</p>
+      </div>
+      <hr />
     </div>
+    <div class="centrado">
+      <a class="boton open1 botones" (click)="openSettings('.open1')" (click)="cambiarEstado1()">Alumnos</a>
+      <a class="boton open2" (click)="openSettings('.open2')" (click)="cambiarEstado2()">Asistencias</a>
+      <a class="boton open3" (click)="openSettings('.open3')" (click)="cambiarEstado3()">Calificaciones</a>
+      <a class="boton open4" (click)="openSettings('.open4')" (click)="cambiarEstado4()">Clases</a>
+      <a class="boton open5" (click)="openSettings('.open5')" (click)="cambiarEstado5()">Caidos</a>
+    </div>
+    <hr class="" />
+    <div *ngIf="open1">
+      <app-alumnos></app-alumnos>
+    </div>
+    <div *ngIf="open2">
+      <app-asistencias></app-asistencias>
+    </div>
+    <div *ngIf="open3">
+      <app-calificaciones></app-calificaciones>
+    </div>
+    <div *ngIf="open4">
+      <app-clases></app-clases>
+    </div>
+    <div *ngIf="open5">
+      <app-caidos></app-caidos>
+    </div>
+  </div>
 </div>

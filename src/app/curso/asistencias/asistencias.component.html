@@ -1,0 +1,27 @@
+<div class="m-4" appReadexcel>
+  <div class="row">
+    <div class="col col-md-6 col-6">
+      <div class="alert alert-success">
+        Promedio de asistencia total:<strong class="textNegrita">
+          {{ _curso.promAsist.toFixed(2) }}%</strong>
+      </div>
+    </div>
+    <div class="col col-md-6 col-6">
+      <div class="alert alert-danger">
+        Total de asistencias:
+        <strong class="textNegrita">{{ _curso.totalAsist }}</strong>
+      </div>
+    </div>
+    <div>
+      <h5>Lista de alumnos</h5>
+      <div class="row">
+        <ul *ngFor="let i of _curso.alumnos" class="col col-md-6 col-6 ul-student">
+          <div class="alert alert-primary div-student">
+            <li class="li-student">
+              {{ i.name }} ({{ i.asistencia }})
+            </li>
+          </div>
+        </ul>
+      </div>
+    </div>
+  </div>

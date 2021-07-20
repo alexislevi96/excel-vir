@@ -24,11 +24,9 @@ export class DataService {
       const wb: XLSX.WorkBook = XLSX.read(bstr, { type: 'binary' });
       const wsname : string = wb.SheetNames[0];
       const ws: XLSX.WorkSheet = wb.Sheets[wsname];
-      // console.log(ws);
       this.data = (XLSX.utils.sheet_to_json(ws, { header: 1, raw:false }));
       console.log(this.data);
       let x = this.data.slice(1);
-      // console.log(x);
       this.noFile = true; 
     };
 
