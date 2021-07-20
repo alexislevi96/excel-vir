@@ -54,9 +54,13 @@
                         <li>Jose Garbanzo: 10</li>
                     </ul>
                     <div>
-                        <ul *ngFor="let n of _data.data">
-                            <li>{{ n.Nombre }}</li>
-                          </ul>
+                        <div>
+                            <ul *ngFor="let i of _data.data">
+                                <li>{{ i.__EMPTY }}</li>
+                            </ul>
+                            <!-- <button (click)='cargarDatos()'>asdas</button>
+                            {{resultado}} -->
+                        </div>
                     </div>
                 </div>
                 <!-- <ul *ngFor="let n of  | async">
