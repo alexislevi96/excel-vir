@@ -42,6 +42,7 @@ export class CursoService {
     }
     return total;
   }
+  
   cargarDatos(){
 
     //Variables
