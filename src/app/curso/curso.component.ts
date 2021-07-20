@@ -66,7 +66,7 @@ export class CursoComponent {
           this.alumnos.push({
             name: this._data.data[alumno][0],
             asistencia: this.plusAsist(this._data.data[alumno], alumnoLength),
-            contrated: this._data.data[alumno][alumnoLength],
+            contrated: this._data.data[alumno][alumnoLength] || 'No',
             qualification: 0,
             finalPractico: 0,
             finalTeorico: 0
@@ -74,7 +74,6 @@ export class CursoComponent {
         }
         i += alumno - i;
       }
-      console.log('AAAAAAAAAAA', i, alumno);
     //Total asistencias y promedio asistencia
       this.totalAlumnos = this.alumnos.length;
       this.promAsist = (this.totalClass * this.totalAlumnos) / this.totalAsist;
@@ -83,17 +82,14 @@ export class CursoComponent {
       // i = alumno;
     //Agrego promedio a cada alumno
       if(this._data.data[i][0] == "Notas Practicos"){
-        console.log('entro al Notas Practicos')
         let j = 0;
         let x = 0;
         let s = 0;
-        console.log(this._data.data[alumno][0])
-        for(alumno = i+2; this._data.data[alumno][0] !== 'Observaciones Generales'; alumno++){
-          console.log('////////////////////////////');
+        for(alumno = i+2; this._data.data[alumno][0] !== undefined; alumno++){
           x = parseInt(this._data.data[alumno][5]) || 0;
-          this.alumnos.qualification = parseInt(this._data.data[alumno][length-1]) || 0;
+          this.alumnos[j].qualification = parseFloat(this._data.data[alumno][this._data.data[alumno].length-1]) || 0;
           this.promFinalPract += x;
-          this.alumnos[j].finalPractico = x;
+          this.alumnos[j].finalPractico! = x;
           if(x > 0){
             this.totalAlumnosFinalPract += 1;
           }
@@ -116,6 +112,7 @@ export class CursoComponent {
       }
     }
     this.promedioApro = this.totalAprob / this.totalAlumnos;
+    console.log('/////////////////////////');
     console.log(this.alumnos)
     console.log(this.totalAsist)
   }
@@ -127,12 +124,7 @@ export class CursoComponent {
   open3 = false;
   
   constructor(public _data: DataService) {
-    // console.log(typeof _data.data[10][1]);
     this.cargarDatos();
-    // _data.data[10].__EMPTY = 'A';
-    // console.log(Object.keys(_data.data[0]));
-    // console.log(_data.data(10));
-    // console.log(_data.data);
   }
   estadoSettings = false;
   // box = document.querySelector('.box');
