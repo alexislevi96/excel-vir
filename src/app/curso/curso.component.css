@@ -30,3 +30,14 @@
 .centrado{
     text-align: center;
 }
+.listaAlumnos{
+    padding: 0;
+    margin-bottom: -20px;
+}
+.subTitulos{
+    padding: 0;
+    margin: 0;
+}
+.textNegrita{
+    color: black;
+}

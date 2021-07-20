@@ -8,22 +8,32 @@ import { DataService } from '../servicios/data.service';
 })
 export class CursoComponent {
 
-  
+  //Asistencia
+  totalAsist = 0;
+  totalAsistFull = 0;
+  promAsist:number = 0;
+
+  //Detalles del curso
   nameCourse = '';
   nameTecnology = '';
   dateCourse = '';
   nameProfessor = '';
   totalAlumnos = 0;
+
+  //Clases
   totalClass = 0;
+
+  //Calificaciones
   totalAprob = 0;
   promedioApro = 0;
-  totalAsist = 0;
-  promAsist = 0;
   promFinalTeo = 0;
   promFinalPract = 0;
   totalAlumnosFinalTeo = 0;
   totalAlumnosFinalPract = 0;
+
+  //Array de alumnos
   alumnos:any = [];
+  
   //Metodo para sumar las asistencias
   plusAsist(array: any, length: any):number{
     let total: number = 0;
@@ -59,6 +69,7 @@ export class CursoComponent {
         this.nameProfessor = this._data.data[i][1];
       }
     // Lista de alumnos y asistencia
+      let j = 0;
       if(this._data.data[i][0] === 'ASISTENCIA'){
         alumnoLength = this._data.data[i+1].length;
         this.totalClass = alumnoLength - 1;
@@ -71,18 +82,20 @@ export class CursoComponent {
             finalPractico: 0,
             finalTeorico: 0
           });
+          this.totalAsist += this.alumnos[j].asistencia;
+          j++;
         }
         i += alumno - i;
       }
     //Total asistencias y promedio asistencia
       this.totalAlumnos = this.alumnos.length;
-      this.promAsist = (this.totalClass * this.totalAlumnos) / this.totalAsist;
-      this.totalAsist = this.plusAsist(this._data.data[alumno], this.totalClass);
+      
+      // this.totalAsist = this.plusAsist(this._data.data[alumno], this.totalClass);
     //Sumo tot alumnos recorridos
       // i = alumno;
     //Agrego promedio a cada alumno
       if(this._data.data[i][0] == "Notas Practicos"){
-        let j = 0;
+        j = 0;
         let x = 0;
         let s = 0;
         for(alumno = i+2; this._data.data[alumno][0] !== undefined; alumno++){
@@ -107,14 +120,30 @@ export class CursoComponent {
     this.promFinalPract = this.promFinalPract / this.totalAlumnosFinalPract;
     this.promFinalTeo = this.promFinalTeo / this.totalAlumnosFinalTeo;
     for(let i = 0; i < this.totalAlumnos; i++){
-      if(this.alumnos.qualification > 6){
+      if(this.alumnos[i].qualification >= 6){
         this.totalAprob += 1;
       }
     }
-    this.promedioApro = this.totalAprob / this.totalAlumnos;
+    this.totalAsistFull = this.totalAlumnos * this.totalClass;
+    this.promedioApro = (this.totalAprob / this.totalAlumnos) * 100;
+    this.promAsist = (this.totalAsist / this.totalAsistFull) * 100;
     console.log('/////////////////////////');
     console.log(this.alumnos)
-    console.log(this.totalAsist)
+    console.log('/////////////////////////');
+    console.log('Nombre del curso: ', this.nameCourse);
+    console.log('Nombre de la tecnologia: ', this.nameTecnology);
+    console.log('Fecha del curso: ', this.dateCourse);
+    console.log('Nombre del profesor: ', this.nameProfessor);
+    console.log('Total de alumnos: ', this.totalAlumnos)
+    console.log('Total de clases: ', this.totalClass)
+    console.log('Total de aprobados: ', this.totalAprob)
+    console.log('Promedio de alumnos aprobados: ', this.promedioApro)
+    console.log('Total de asistencias: ', this.totalAsist)
+    console.log('Promedio de asistencias por alumno ', this.promAsist)
+    console.log('Promedio Final teorico: ', this.promFinalTeo)
+    console.log('Promedio Final Practico: ', this.promFinalPract)
+    console.log('Alumnos que rindieron Final Teorico: ', this.totalAlumnosFinalTeo)
+    console.log('Alumnos que rindieron Final Practico: ', this.totalAlumnosFinalPract)
   }
 
   ////////////////////////////////////////////////////////

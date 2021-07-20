@@ -2,10 +2,16 @@
     <div class="box closeSettings" id="box" itemid="box">
         <div class="row">
             <div class="col col-md-10">
-                <h4 class="m-4">Curso de Angular</h4>
+                <h4 class="mt-4 mx-4">{{nameCourse}}</h4>
             </div>
             <div class="col col-md-2">
                 <a class="btn btn-warning m-4" (click)="settings()">Abrir</a>
+            </div>
+            <div class="mb-3">
+                <p class="mx-4 subTitulos">Tec: {{nameTecnology}}</p>
+                <p class="mx-4 subTitulos">Fecha: {{dateCourse}}</p>
+                <p class="mx-4 subTitulos">Profe: {{nameProfessor}}</p>
+                <p class="mx-4 subTitulos">Cantidad de alumnos: {{totalAlumnos}}</p>
             </div>
             <hr>
         </div>
@@ -19,53 +25,31 @@
         <hr class="">
         <div *ngIf='openAsis'>
             <div class="m-4" appReadexcel>
-                <h3>Promedio de Asistencias</h3>
+                <!-- <h3>Promedio de Asistencias</h3> -->
                 <div class="row">
                     <div class="col col-md-6 col-6">
-                        <div class="alert alert-success">Promedio de asistencia total: 55%</div>
+                        <div class="alert alert-success">
+                            Promedio de asistencia total:<strong class="textNegrita"> {{promAsist.toFixed(2)}}%</strong>
+                        </div>
                     </div>
                     <div class="col col-md-6 col-6">
-                        <div class="alert alert-danger">Total de asistencias: 500 de 20 alumnos en 45 dias</div>
+                        <div class="alert alert-danger">Total de asistencias: <strong class="textNegrita">{{totalAsist}}</strong></div>
                     </div>
-                    <div class="col col-md-6 col-6">
+                    <!-- <div class="col col-md-6 col-6">
                         <p>Alumno con mas asistencias:<strong>Juan Guarnizo (40)</strong> </p>
                     </div>
-                    <div class="col col-md-6 col-6"><p>Dias de curso: 45</p></div>
-                    <div class="col col-md-12 col-xs-12">
-                        <div class="alert alert-secondary">
-                            La cantidad de alumnos es de 20
-                        </div>
-                    </div>
-                </div>
+                    <div class="col col-md-6 col-6">
+                        <p>Dias de curso: {{totalClass}}</p></div>
+                    </div> -->
                 <div>
-                    <h5>Lista de alumnos   Total de asistencias</h5>
-                    <ul>
-                        <li>Jose Garbanzo: 50 <strong>¡MVP!</strong></li>
-                        <li>Jose Garbanzo: 33</li>
-                        <li>Jose Garbanzo: 23</li>
-                        <li>Jose Garbanzo: 10</li>
-                        <li>Jose Garbanzo: 50</li>
-                        <li>Jose Garbanzo: 33</li>
-                        <li>Jose Garbanzo: 23</li>
-                        <li>Jose Garbanzo: 10</li>
-                        <li>Jose Garbanzo: 50</li>
-                        <li>Jose Garbanzo: 33</li>
-                        <li>Jose Garbanzo: 23</li>
-                        <li>Jose Garbanzo: 10</li>
-                    </ul>
-                    <div>
-                        <div>
-                            <ul *ngFor="let i of _data.data">
-                                <li>{{ i.__EMPTY }}</li>
-                            </ul>
-                            <!-- <button (click)='cargarDatos()'>asdas</button>
-                            {{resultado}} -->
-                        </div>
-                    </div>
+                    <h5>Lista de alumnos</h5>
+                        <ul *ngFor="let i of alumnos">
+                            <div class="alert alert-success" style="width: 50%;">
+
+                                <li class="listaAlumnos">{{ i.name }} ({{ i.asistencia }})</li>
+                            </div>
+                        </ul>
                 </div>
-                <!-- <ul *ngFor="let n of  | async">
-                    <li>{{ n.Nombre }} {{n.Edad}} {{n.Pastores}}</li>
-                </ul> -->
             </div>
         </div>
         <div *ngIf='openApro'>
