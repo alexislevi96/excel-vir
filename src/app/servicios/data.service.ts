@@ -1,3 +1,4 @@
+import { formatCurrency } from '@angular/common';
 import { Injectable } from '@angular/core';
 import * as XLSX from 'xlsx';
 
@@ -9,7 +10,7 @@ export class DataService {
   noFile = false;
   
   data: any;
-  constructor() { }
+  constructor() {}
 
   ngOnInit(): void {
   }
@@ -29,7 +30,18 @@ export class DataService {
       let x = this.data.slice(1);
       this.noFile = true; 
     };
-
     reader.readAsBinaryString(target.files[0]);
+    this.forma();
+  }
+
+  forma(){
+    if(this.noFile == false){
+      document.getElementsByClassName('headerPadre')[0]?.classList.remove('seAchica');
+      document.getElementsByClassName('headerPadre')[0]?.classList.add('seAgranda');
+      document.getElementsByClassName('curva')[0].classList.add('seAgrandaCurva');
+      document.getElementsByClassName('cursoApp')[0]?.classList.remove('cursoApp3');
+      document.getElementsByClassName('cursoApp')[0]?.classList.add('cursoApp2');
+    }
+    console.log(document.getElementsByClassName('cursoApp')[0])
   }
 }

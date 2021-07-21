@@ -3,6 +3,7 @@
   border-radius: 0.5rem;
   overflow: hidden;
   width: 100%;
+  background-color: white;
 }
 
 .openSettings {
@@ -46,21 +47,21 @@
   padding: 10px;
   margin: 0px 0px 0px;
 }
-.alertPersonalizada{
+.alertPersonalizada {
   box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 2px 6px 2px rgb(60 64 67 / 15%);
   border-radius: 0.5rem;
   overflow: hidden;
   border: none;
 }
-.padding0{
+.padding0 {
   padding: 0;
 }
 .borderRed {
-  border-left: 5px solid red ;
+  border-left: 5px solid red;
 }
-.borderBlue{
-  border-left: 5px solid blue ;
+.borderBlue {
+  border-left: 5px solid blue;
 }
-.borderGreen{
-  border-left: 5px solid green ;
+.borderGreen {
+  border-left: 5px solid green;
 }
