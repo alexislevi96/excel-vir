@@ -42,6 +42,19 @@ export class CursoService {
     }
     return total;
   }
+  //Funcion nivel asistencia
+  nivelAsist(){
+    for(let i = 0; i < this.totalAlumnos; i++){
+      let aux = this.promAsist / 10;
+      if(this.alumnos[i].asistencia < aux - 1){
+        this.alumnos[i].levelAsistencia = 1;
+      }else if(this.alumnos[i].asistencia > aux + 0.2){
+        this.alumnos[i].levelAsistencia = 3;
+      }else{
+        this.alumnos[i].levelAsistencia = 2;
+      }
+    }
+  }
   cargarDatos(){
 
     //Variables
@@ -75,6 +88,7 @@ export class CursoService {
           this.alumnos.push({
             name: this._data.data[alumno][0],
             asistencia: this.plusAsist(this._data.data[alumno], alumnoLength),
+            levelAsistencia: 0,
             contrated: this._data.data[alumno][alumnoLength] || 'No',
             qualification: 0,
             finalPractico: 0,
@@ -87,11 +101,10 @@ export class CursoService {
       }
     //Total asistencias y promedio asistencia
       this.totalAlumnos = this.alumnos.length;
-      
       // this.totalAsist = this.plusAsist(this._data.data[alumno], this.totalClass);
-    //Sumo tot alumnos recorridos
+      //Sumo tot alumnos recorridos
       // i = alumno;
-    //Agrego promedio a cada alumno
+      //Agrego promedio a cada alumno
       if(this._data.data[i][0] == "Notas Practicos"){
         j = 0;
         let x = 0;
@@ -123,8 +136,9 @@ export class CursoService {
       }
     }
     this.totalAsistFull = this.totalAlumnos * this.totalClass;
-    this.promedioApro = (this.totalAprob / this.totalAlumnos) * 100;
     this.promAsist = (this.totalAsist / this.totalAsistFull) * 100;
+    this.promedioApro = (this.totalAprob / this.totalAlumnos) * 100;
+    this.nivelAsist()
     console.log('/////////////////////////');
     console.log(this.alumnos)
     console.log('/////////////////////////');

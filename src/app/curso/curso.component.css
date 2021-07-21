@@ -12,10 +12,7 @@
   height: 80px;
 }
 .botones {
-  border-bottom: 3px solid lightblue;
-  border-radius: 5px 5px;
-  border-bottom-left-radius: 2px;
-  border-bottom-right-radius: 2px;
+  border-bottom: 3px solid blue;
 }
 .boton {
   color: black;
@@ -48,4 +45,22 @@
 .div-student {
   padding: 10px;
   margin: 0px 0px 0px;
+}
+.alertPersonalizada{
+  box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 2px 6px 2px rgb(60 64 67 / 15%);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  border: none;
+}
+.padding0{
+  padding: 0;
+}
+.borderRed {
+  border-left: 5px solid red ;
+}
+.borderBlue{
+  border-left: 5px solid blue ;
+}
+.borderGreen{
+  border-left: 5px solid green ;
 }

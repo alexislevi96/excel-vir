@@ -8,7 +8,7 @@ import { CursoService } from '../../servicios/curso.service';
 export class AsistenciasComponent implements OnInit {
 
   constructor(public _curso: CursoService) { }
-
+  
   ngOnInit(): void {
   }
 

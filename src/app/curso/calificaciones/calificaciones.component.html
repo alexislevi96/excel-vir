@@ -1,14 +1,37 @@
 <div class="m-4">
-    <h3>Promedio de Aprobacion</h3>
     <div class="row">
-        <div class="col col-6 col-md-6">
-            <div class="alert alert-success">
-                Promedio del curso: <strong>6.8</strong>
+        <div class="col col-12 col-md-6 col-sm-12 col-xs-12">
+            <div class="alert alertPersonalizada borderGreen">
+                Promedio de aprobacion del curso: <strong>%{{_curso.promedioApro.toFixed(2)}}</strong>
             </div>
         </div>
-        <div class="col col-6 col-md-6">
+        <div class="col col-12 col-md-6 col-xs-12 col-sm-12">
+            <div class="alert alertPersonalizada borderBlue">
+                Alumnos aprobados: {{_curso.totalAprob}} de {{_curso.totalAlumnos}} alumnos
+            </div>
+        </div>
+        <h3>Final practico</h3>
+        <!-- <hr style="width: 15%; margin-bottom: 20px;"> -->
+        <div class="col col-12 col-md-6 col-sm-12 col-xs-12">
+            <div class="alert alert-success">
+                Promedio del practico: <strong>{{_curso.promFinalPract.toFixed(2)}}</strong>
+            </div>
+        </div>
+        <div class="col col-12 col-md-6 col-sm-12 col-xs-12">
             <div class="alert alert-light">
-                Alumno con mejor promedio: <strong>Sofia Mersel (8.4)</strong>
+                Alumnos: {{_curso.totalAlumnosFinalPract}} de {{_curso.totalAlumnos}} alumnos
+            </div>
+        </div>
+        <h3>Final Teorico</h3>
+        <!-- <hr style="width: 15%; margin-bottom: 20px;"> -->
+        <div class="col col-12 col-md-6 col-sm-12 col-xs-12">
+            <div class="alert alert-success">
+                Promedio del practico: <strong>{{_curso.promFinalTeo.toFixed(2)}}</strong>
+            </div>
+        </div>
+        <div class="col col-12 col-md-6 col-sm-12 col-xs-12">
+            <div class="alert alert-light">
+                Alumnos: {{_curso.totalAlumnosFinalTeo}} de {{_curso.totalAlumnos}} alumnos
             </div>
         </div>
     </div>
