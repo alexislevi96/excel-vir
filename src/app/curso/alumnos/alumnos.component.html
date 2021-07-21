@@ -10,10 +10,10 @@
               </mat-panel-title>
             </mat-expansion-panel-header>
             <ul>
-              <li>Asistencia: {{ i.asistencia }}</li>
-              <li>Calificacion: {{ i.qualification }}</li>
-              <li>Final Pract: {{ i.finalPractico }}</li>
-              <li>Final Teo: {{ i.finalTeorico }}</li>
+              <li>Asistencias: {{ i.asistencia }}/{{_curso.totalClass}}</li>
+              <li>Promedio: {{ i.qualification }}</li>
+              <li>Final Pract: {{ i.finalPractico || ' Ausente'}}</li>
+              <li>Final Teo: {{ i.finalTeorico || ' Ausente'}}</li>
               <li>Contratado: {{ i.contrated }}</li>
             </ul>
           </mat-expansion-panel>

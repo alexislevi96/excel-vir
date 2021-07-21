@@ -14,24 +14,25 @@
 }
 .headerPadre h1 {
   margin: 0;
-  font-size: 50px;
+  font-size: 70px;
   color: white;
-  padding-top: 20px;
+  padding-top: 30px;
+  text-shadow: 4px 3px 0px #383838;
 }
 .icon{
   position: relative;
   top: -10px;
-  width: 50px;
-  height: 30px;
+  width: 80px;
+  height: 50px;
 }
 .headerPadre p {
-  margin-top: -10px;
+  margin-top: 100px;
 }
 .formitaRedonda {
   text-align: center;
   margin: 0 auto;
-  width: 350px;
-  height: 100px;
+  width: 450px;
+  height: 150px;
   background-color: #3e5796;
   border-radius: 31% 69% 26% 74% / 46% 48% 52% 54%;
 }
@@ -40,11 +41,11 @@
 }
 .seAchica {
   position: absolute;
-  height: 170px;
+  height: 200px;
 }
 .seAgranda {
   position: absolute;
-  height: 800px;
+  height: 850px;
   transition: 3.2s;
 }
 .curva {

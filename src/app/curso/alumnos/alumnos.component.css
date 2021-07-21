@@ -25,11 +25,11 @@
   font-weight: bold;
   border-radius: 5px;
   /* margin-bottom: 10px; */
-  background-color: #f6b4b4;
+  background-color: #AED6F1;
   transition: background-color 0.3s ease-in-out;
 }
 .title:hover {
-  background-color: #ecabab;
+  background-color: blue;
 }
 .dropdownButton:hover {
   cursor: pointer;
@@ -45,7 +45,7 @@
 } */
 .dropdownContent {
   border-radius: 5px;
-  border-bottom: 4px solid #f5d1ca;
+  border-bottom: 4px solid #1F618D;
 }
 /* .dropdownContent {
   padding: 15px 8px;
