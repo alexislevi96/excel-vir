@@ -1,13 +1,23 @@
-<h1 class="text-center mt-4">Excel Vir</h1>
+<div class="container-fluid contenedorPadre">
+  <div class="container-fluid headerPadre seAchica" id='headerPadre' name="headerPadre">
+    <div class="text-white formitaRedonda">
+      <h1 class="text-center">ExcelVir</h1>
+      <p>Aplicacion para leer excel</p>
+    </div>
+    <div style="" class="mt-1 ml-4 text-white">
+      <input type="file" (change)="_data.onFileChange($event)" multiple="false" />
+    </div>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" class="curva" style="position: relative;">
+      <path fill="#132545" fill-opacity="1"
+        d="M0,96L30,85.3C60,75,120,53,180,48C240,43,300,53,360,69.3C420,85,480,107,540,133.3C600,160,660,192,720,176C780,160,840,96,900,80C960,64,1020,96,1080,117.3C1140,139,1200,149,1260,144C1320,139,1380,117,1410,106.7L1440,96L1440,0L1410,0C1380,0,1320,0,1260,0C1200,0,1140,0,1080,0C1020,0,960,0,900,0C840,0,780,0,720,0C660,0,600,0,540,0C480,0,420,0,360,0C300,0,240,0,180,0C120,0,60,0,30,0L0,0Z">
+      </path>
+    </svg>
+  </div>
 
-<div style="text-align: center;" class="mt-4">
-  <input type="file" (change)="_data.onFileChange($event)" multiple="false" />
+  <div *ngIf="_data.noFile" class="mt-4 mb-4 cursoApp" data-aos="fade-down" data-aos-duration='1500'>
+    <app-curso></app-curso>
+  </div>
 </div>
-
-<div *ngIf="_data.noFile" class="mt-4 mb-4">
-  <app-curso></app-curso>
-</div>
-
 <!-- <table>
   <tbody>
     <tr *ngFor="let row of _data.data">

@@ -1,16 +1,20 @@
-.colorTransparent{
-    opacity: 0.7;
+.colorTransparent {
+  opacity: 0.7;
 }
-.headerCard{
-    position: relative;
-    margin: 0;
-    padding: 0;
-    height: 50px;
-    width: 100%;
-    margin-bottom: 20px;
-    background-color: #922B21;
+.headerCard {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  height: 50px;
+  width: 100%;
+  margin-bottom: 20px;
+  background-color: #922b21;
 }
 .headerCard h5 {
-    padding-top: 15px;
-    color: white;
+  padding-top: 15px;
+  color: white;
+}
+.chartAsist {
+  width: 300px !important;
+  height: 200px !important;
 }
