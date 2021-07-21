@@ -1,1 +1,22 @@
-<p>alumnos works!</p>
+<div class="m-4">
+  <div>
+    <h5>Lista Alumnos:</h5>
+    <div class="row">
+      <ul *ngFor="let i of _curso.alumnos" class="col col-md-6 col-6 ul-student">
+        <div class="dropdownMenu">
+          <div class="title dropdownButton borderButtom">
+            <p><i class="fas fa-chevron-down"></i>{{ i.name }}</p>
+          </div>
+          <div class="dropdownContent">
+            Hola
+          </div>
+        </div>
+        <!-- <div class="alert alert-primary div-student">
+          <li class="li-student">
+            {{ i.name }}
+          </li>
+        </div> -->
+      </ul>
+    </div>
+  </div>
+</div>

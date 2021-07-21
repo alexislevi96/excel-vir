@@ -1,4 +1,4 @@
-<div class="m-4" appReadexcel>
+<div class="m-4">
   <div class="row">
     <div class="col col-md-6 col-6">
       <div class="alert alertPersonalizada borderBlue">
@@ -17,6 +17,16 @@
       <div class="alert alertPersonalizada padding0" style="width: 100%; text-align: center; margin: 0 auto;">
       <div class="headerCard">
         <h5>Lista de alumnos</h5>
+    <div>
+      <h5>Asistencia por alumnos:</h5>
+      <div class="row">
+        <ul *ngFor="let i of _curso.alumnos" class="col col-md-6 col-6 ul-student">
+          <div class="alert alert-primary div-student">
+            <li class="li-student">
+              {{ i.name }} ({{ i.asistencia }})
+            </li>
+          </div>
+        </ul>
       </div>
       <span class="badge colorTransparent mx-1" [class.bg-danger]='true'>Promedio bajo</span>
       <span class="badge colorTransparent mx-1" [class.bg-warning]='true'>Promedio normal</span>
