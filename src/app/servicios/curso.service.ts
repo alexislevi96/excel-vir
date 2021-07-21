@@ -32,6 +32,17 @@ export class CursoService {
   //Array de alumnos
   alumnos:any = [];
   
+  //Funcion para cambiar de formato la fecha
+  changeFormatDate(fecha: string):string{
+    let date = fecha.split('/');
+    let aux = '';
+    let aux2 = '';
+    aux = date[0];
+    aux2 = date[1];
+    date[0] = aux2;
+    date[1] = aux;
+    return date.join('/');
+  }
   //Metodo para sumar las asistencias
   plusAsist(array: any, length: any):number{
     let total: number = 0;
@@ -72,11 +83,11 @@ export class CursoService {
       if(this._data.data[i][0] === 'Tecnologia /s'){
         this.nameTecnology = this._data.data[i][1];
       }
-    // Titulo de la tecnologia
+    // Fecha de inicio
       if(this._data.data[i][0] === 'Fecha de Inicio'){
         this.dateCourse = this._data.data[i][1];
       }
-    // Titulo de la tecnologia
+    // Nombre del profesor
       if(this._data.data[i][0] === 'Formador:'){
         this.nameProfessor = this._data.data[i][1];
       }
@@ -157,6 +168,8 @@ export class CursoService {
     console.log('Promedio Final Practico: ', this.promFinalPract)
     console.log('Alumnos que rindieron Final Teorico: ', this.totalAlumnosFinalTeo)
     console.log('Alumnos que rindieron Final Practico: ', this.totalAlumnosFinalPract)
+    let auxiliar = this.dateCourse;
+    this.dateCourse = this.changeFormatDate(auxiliar);
   }
   constructor(public _data: DataService) {
     this.cargarDatos();

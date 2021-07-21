@@ -1,21 +1,11 @@
 .contenedorPadre {
   position: absolute;
   height: 100vh;
-  /* background: rgb(23, 32, 42);
-  background: linear-gradient(
-    90deg,
-    rgba(23, 32, 42, 1) 0%,
-    rgba(44, 62, 80, 1) 50%,
-    rgba(23, 32, 42, 1) 100%
-  ); */
   padding: 0;
   margin: 0;
 }
 .headerPadre {
-  /* background: url("https://wallpaper.dog/large/976193.jpg"); */
-  /* background-size: cover; */
   background-color: #132545;
-  /* clip-path: ellipse(102% 100% at 78.6% 0%); */
   margin: 0;
   padding: 0;
   position: relative;
@@ -24,7 +14,15 @@
 }
 .headerPadre h1 {
   margin: 0;
-  color: black;
+  font-size: 50px;
+  color: white;
+  padding-top: 20px;
+}
+.icon{
+  position: relative;
+  top: -10px;
+  width: 50px;
+  height: 30px;
 }
 .headerPadre p {
   margin-top: -10px;
@@ -36,10 +34,6 @@
   height: 100px;
   background-color: #3e5796;
   border-radius: 31% 69% 26% 74% / 46% 48% 52% 54%;
-}
-.formitaRedonda h1 {
-  color: white;
-  padding-top: 15px;
 }
 .formitaRedonda p {
   color: black;
