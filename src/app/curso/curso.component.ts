@@ -1,9 +1,6 @@
 import { Component } from '@angular/core';
 import { CursoService } from '../servicios/curso.service';
-<<<<<<< HEAD
-=======
 import {NgbAccordionConfig} from '@ng-bootstrap/ng-bootstrap';
->>>>>>> 86c0ceaeff5c585938f84f3841fea78b6db87505
 
 @Component({
   selector: 'app-curso',
@@ -22,12 +19,8 @@ export class CursoComponent {
   
   constructor(public _curso: CursoService,config: NgbAccordionConfig) {
     // this.cargarDatos();
-<<<<<<< HEAD
-    
-=======
     config.closeOthers = true;
     // config.type = 'info';
->>>>>>> 86c0ceaeff5c585938f84f3841fea78b6db87505
   }
   estadoSettings = false;
   // box = document.querySelector('.box');
