@@ -5,8 +5,12 @@
         Promedio de asistencia total:<strong class="textNegrita">
           {{ _curso.promAsist.toFixed(2) }}%</strong>
       </div>
+      <div class="alert alertPersonalizada borderBlue">
+        Total de clases:
+        <strong class="textNegrita">{{ _curso.totalClass }}</strong>
+      </div>
     </div>
-    <div class="col col-md-6 col-6">
+    <div class="col col-md-6 col-6" style="width: 40%;">
       <ngx-charts-pie-chart class="chartAsist"
       [view]="view"
       [scheme]="colorScheme"
@@ -23,17 +27,13 @@
     </ngx-charts-pie-chart>
     </div>
     <div class="col col-md-6 col-6">
-      <div class="alert alertPersonalizada borderBlue">
-        Total de clases:
-        <strong class="textNegrita">{{ _curso.totalClass }}</strong>
-      </div>
+      
     </div>
     <div class="mb-4">
       <hr style="width: 15%; margin: 30px auto;">
       <div class="alert alertPersonalizada padding0" style="width: 100%; text-align: center; margin: 0 auto;">
         <div class="headerCard">
-          <h5>Lista de alumnos</h5>
-          <h5>Asistencia por alumnos:</h5>
+          <h3>Lista de alumnos</h3>
         </div>
         <span class="badge colorTransparent mx-1" [class.bg-danger]='true'>Promedio bajo</span>
         <span class="badge colorTransparent mx-1" [class.bg-warning]='true'>Promedio normal</span>

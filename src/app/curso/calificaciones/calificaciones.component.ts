@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CursoService } from 'src/app/servicios/curso.service';
-import { BrowserModule } from '@angular/platform-browser';
-import { NgxChartsModule } from '@swimlane/ngx-charts';
-import { single } from './data';
+// import { single } from './data';
 
 @Component({
   selector: 'app-calificaciones',
@@ -11,7 +9,7 @@ import { single } from './data';
 })
 export class CalificacionesComponent {
 
-  single: any = '';
+  single: any;
   multi: any = '';
 
   // view: number[] = [700, 400];
@@ -31,11 +29,25 @@ export class CalificacionesComponent {
   };
 
   constructor(public _curso: CursoService) {
-    Object.assign(this, { single })
+    // console.log(this.single);
+    this.cargarDatos();
+    Object.assign(this, this.single)
   }
 
 
   onSelect(event: any) {
     console.log(event);
+  }
+
+  cargarDatos(): any {
+    const data = [];
+    for (let i = 0; i < this._curso.arrayClases.length; i++) {
+      data.push({
+        "name": this._curso.arrayCalificaciones[i].clase + '/' + this._curso.arrayFechas[i],
+        "value": this._curso.arrayCalificaciones[i].total / this._curso.totalAlumnos
+      })
+    }
+    console.log(data);
+    this.single = data;
   }
 }

@@ -8,6 +8,7 @@
   border-color: #007bff transparent green violet;
 }
 .grafico {
-  height: 300px;
+  margin-top: 20px;
+  height: 400px;
   width: 100%;
 }

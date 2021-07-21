@@ -34,11 +34,13 @@
                 Alumnos: {{_curso.totalAlumnosFinalTeo}} de {{_curso.totalAlumnos}} alumnos
             </div>
         </div>
-        <h3>Promedio de calificaciones por materia:</h3>
-        <ngx-charts-bar-vertical class="grafico" [scheme]="colorScheme" [results]="single" [gradient]="gradient"
-            [xAxis]="showXAxis" [yAxis]="showYAxis" [legend]="showLegend" [showXAxisLabel]="showXAxisLabel"
-            [showYAxisLabel]="showYAxisLabel" [xAxisLabel]="xAxisLabel" [yAxisLabel]="yAxisLabel"
-            (select)="onSelect($event)">
-        </ngx-charts-bar-vertical>
+        <h3 class="mt-3">Promedio de calificaciones por materia:</h3>
+        <div class="grafico">
+            <ngx-charts-bar-vertical [scheme]="colorScheme" [results]="single" [gradient]="gradient" [xAxis]="showXAxis"
+                [yAxis]="showYAxis" [legend]="showLegend" [showXAxisLabel]="showXAxisLabel"
+                [showYAxisLabel]="showYAxisLabel" [xAxisLabel]="xAxisLabel" [yAxisLabel]="yAxisLabel"
+                (select)="onSelect($event)">
+            </ngx-charts-bar-vertical>
+        </div>
     </div>
 </div>
