@@ -29,6 +29,13 @@ export class CursoService {
   totalAlumnosFinalTeo = 0;
   totalAlumnosFinalPract = 0;
 
+  //Fechas
+  arrayFechas:any=[];
+  arrayAsitencias:any=[];
+  //Clases
+  arrayClases:any=[];
+  arrayCalificaciones:any=[];
+
   //Array de alumnos
   alumnos:any = [];
   
@@ -84,6 +91,8 @@ export class CursoService {
       let j = 0;
       if(this._data.data[i][0] === 'ASISTENCIA'){
         alumnoLength = this._data.data[i+1].length;
+        // Array dias
+        [,...this.arrayFechas] = this._data.data[i+1];
         this.totalClass = alumnoLength - 1;
         for(alumno = i+2; this._data.data[alumno][0] != 'Total Asistencia' ; alumno++){
           this.alumnos.push({
@@ -98,6 +107,8 @@ export class CursoService {
           this.totalAsist += this.alumnos[j].asistencia;
           j++;
         }
+        // Array asis
+        [,...this.arrayAsitencias] = this._data.data[alumno];
         i += alumno - i;
       }
     //Total asistencias y promedio asistencia
@@ -110,6 +121,11 @@ export class CursoService {
         j = 0;
         let x = 0;
         let s = 0;
+        let v = 0;
+        [,...this.arrayClases] = this._data.data[i+1];
+        for(let f = 0; f<this.arrayClases.length;f++){
+          this.arrayCalificaciones.push({'clase': this.arrayClases[f], 'total': 0});
+        }
         for(alumno = i+2; this._data.data[alumno][0] !== undefined; alumno++){
           x = parseInt(this._data.data[alumno][5]) || 0;
           this.alumnos[j].qualification = parseFloat(this._data.data[alumno][this._data.data[alumno].length-1]) || 0;
@@ -124,9 +140,12 @@ export class CursoService {
           if(s > 0){
             this.totalAlumnosFinalTeo += 1;
           }
+          // total
+          for(v=0;v<this.arrayClases.length;v++){
+            this.arrayCalificaciones[v].total += Number(this._data.data[alumno][v]) || 0;
+          }
           j++;
         }
-        // i += alumno - i;
       }
     }
     this.promFinalPract = this.promFinalPract / this.totalAlumnosFinalPract;
@@ -157,6 +176,12 @@ export class CursoService {
     console.log('Promedio Final Practico: ', this.promFinalPract)
     console.log('Alumnos que rindieron Final Teorico: ', this.totalAlumnosFinalTeo)
     console.log('Alumnos que rindieron Final Practico: ', this.totalAlumnosFinalPract)
+    console.log('Array Fechas: ', this.arrayFechas);
+    console.log('Array Asistencias: ', this.arrayAsitencias);
+    console.log('Array Asistencias: ', this.arrayClases);
+    console.log('Array Asistencias: ', this.arrayCalificaciones);
+    
+    
   }
   constructor(public _data: DataService) {
     this.cargarDatos();

@@ -1,17 +1,17 @@
 <div class="m-4">
   <div>
     <mat-accordion class="dropdownMenu">
-    <div class="row">
+      <div class="row">
         <ul *ngFor="let i of _curso.alumnos" class="ul-student col col-md-12 col-12" style="width: 50%;">
           <mat-expansion-panel class="dropdownContent">
             <mat-expansion-panel-header class="title dropdownButton borderButtom">
-              <mat-panel-title >
+              <mat-panel-title>
                 {{i.name}}
               </mat-panel-title>
             </mat-expansion-panel-header>
             <ul>
               <li>Asistencia: {{ i.asistencia }}</li>
-              <li>Calificacion: {{ i.qualification }}</li>
+              <li>Promedio Final: {{ i.qualification }}</li>
               <li>Final Pract: {{ i.finalPractico }}</li>
               <li>Final Teo: {{ i.finalTeorico }}</li>
               <li>Contratado: {{ i.contrated }}</li>
