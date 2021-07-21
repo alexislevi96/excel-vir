@@ -11,6 +11,8 @@ import { CalificacionesComponent } from './curso/calificaciones/calificaciones.c
 import { ClasesComponent } from './curso/clases/clases.component';
 import { CaidosComponent } from './curso/caidos/caidos.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    BrowserAnimationsModule,
+    MatExpansionModule
   ],
   providers: [DataService],
   bootstrap: [AppComponent]
