@@ -10,6 +10,7 @@ import { AsistenciasComponent } from './curso/asistencias/asistencias.component'
 import { CalificacionesComponent } from './curso/calificaciones/calificaciones.component';
 import { ClasesComponent } from './curso/clases/clases.component';
 import { CaidosComponent } from './curso/caidos/caidos.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { CaidosComponent } from './curso/caidos/caidos.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgbModule
   ],
   providers: [DataService],
   bootstrap: [AppComponent]

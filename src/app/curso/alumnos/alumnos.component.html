@@ -2,21 +2,37 @@
   <div>
     <h5>Lista Alumnos:</h5>
     <div class="row">
-      <ul *ngFor="let i of _curso.alumnos" class="col col-md-6 col-6 ul-student">
-        <div class="dropdownMenu">
+      <ul *ngFor="let i of _curso.alumnos" class="ul-student">
+        <ngb-accordion [closeOthers]=true>
+          <ngb-panel>
+            <ng-template ngbPanelTitle>
+              {{ i.name }}
+            </ng-template>
+            <ng-template ngbPanelContent>
+              <ul>
+                <li>Asistencia: {{ i.asistencia }}</li>
+                <li>Calificacion: {{ i.qualification }}</li>
+                <li>Final Pract: {{ i.finalPractico }}</li>
+                <li>Final Teo: {{ i.finalTeorico }}</li>
+                <li>Contratado: {{ i.contrated }}</li>
+              </ul>
+            </ng-template>
+          </ngb-panel>
+        </ngb-accordion>
+      </ul>
+        <!-- <div class="dropdownMenu">
           <div class="title dropdownButton borderButtom">
             <p><i class="fas fa-chevron-down"></i>{{ i.name }}</p>
           </div>
           <div class="dropdownContent">
             Hola
           </div>
-        </div>
+        </div> -->
         <!-- <div class="alert alert-primary div-student">
           <li class="li-student">
             {{ i.name }}
           </li>
         </div> -->
-      </ul>
     </div>
   </div>
 </div>
