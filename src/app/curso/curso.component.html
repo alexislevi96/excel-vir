@@ -2,14 +2,14 @@
   <div class="box closeSettings" id="box" itemid="box">
     <div class="row">
       <div class="col col-md-10 col-xs-9 col-sm-9 col-9">
-        <h4 class="mt-4 mx-4">{{ _curso.nameCourse }}</h4>
+        <h1 class="mt-4 mx-4">{{ _curso.nameCourse }}</h1>
       </div>
       <div class="col col-md-2 col-xs-3 col-sm-2 col-3">
         <a class="btn btn-warning m-4" (click)="settings()">Abrir</a>
       </div>
       <div class="mb-3">
         <p class="mx-4 subTitulos">Tec: {{ _curso.nameTecnology }}</p>
-        <p class="mx-4 subTitulos">Fecha: {{ _curso.dateCourse }}</p>
+        <p class="mx-4 subTitulos">Fecha: {{_curso.dateCourse }}</p>
         <p class="mx-4 subTitulos">Profe: {{ _curso.nameProfessor }}</p>
         <p class="mx-4 subTitulos">Cantidad de alumnos: {{ _curso.totalAlumnos }}</p>
       </div>
@@ -19,7 +19,7 @@
       <a class="boton open1 botones" (click)="openSettings('.open1')" (click)="cambiarEstado1()">Alumnos</a>
       <a class="boton open2" (click)="openSettings('.open2')" (click)="cambiarEstado2()">Asistencias</a>
       <a class="boton open3" (click)="openSettings('.open3')" (click)="cambiarEstado3()">Calificaciones</a>
-      <a class="boton open4" (click)="openSettings('.open4')" (click)="cambiarEstado4()">Clases</a>
+      <!-- <a class="boton open4" (click)="openSettings('.open4')" (click)="cambiarEstado4()">Clases</a> -->
       <!-- <a class="boton open5" (click)="openSettings('.open5')" (click)="cambiarEstado5()">Caidos</a> -->
     </div>
     <hr class="" />
@@ -32,9 +32,9 @@
     <div *ngIf="open3">
       <app-calificaciones></app-calificaciones>
     </div>
-    <div *ngIf="open4">
+    <!-- <div *ngIf="open4">
       <app-clases></app-clases>
-    </div>
+    </div> -->
     <!-- <div *ngIf="open5">
       <app-caidos></app-caidos>
     </div> -->

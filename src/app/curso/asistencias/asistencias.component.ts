@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CursoService } from '../../servicios/curso.service';
-import { Chart, ChartArea, registerables  } from 'chart.js';
-
+import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { single } from './data';
 @Component({
   selector: 'app-asistencias',
   templateUrl: './asistencias.component.html',
@@ -10,22 +10,35 @@ import { Chart, ChartArea, registerables  } from 'chart.js';
 export class AsistenciasComponent implements OnInit {
 
   constructor(public _curso: CursoService) {
+    Object.assign(this, { single });
+  }
+
+   single: any[] = [];
+   view: any = [700, 400];
+ 
+   // options
+   gradient: boolean = true;
+   showLegend: boolean = true;
+   showLabels: boolean = true;
+   isDoughnut: boolean = false;
+   legendPosition: any = 'below';
+ 
+   colorScheme = {
+     domain: ['#5AA454', '#A10A28', '#C7B42C', '#AAAAAA']
+   };
+ 
+   onSelect(data: any): void {
+     console.log('Item clicked', JSON.parse(JSON.stringify(data)));
    }
-  
+ 
+   onActivate(data: any): void {
+     console.log('Activate', JSON.parse(JSON.stringify(data)));
+   }
+ 
+   onDeactivate(data: any): void {
+     console.log('Deactivate', JSON.parse(JSON.stringify(data)));
+   }
+   //////////////////////////////
   ngOnInit(): void {
-    Chart.register(...registerables);
-    let ctx: any = document.getElementsByClassName("myChart");
-    let myChart = new Chart(ctx[0], {
-      type: 'doughnut',
-      data: {
-        labels: ['col1', 'col2', 'col3'],
-        datasets: [{
-          label: 'num datos',
-          data: [10,9,2],
-          backgroundColor: ['#F9E79F','#A3E4D7','#F5B7B1']
-        }]
-      }
-    });
-    console.log(myChart)
   }
 }

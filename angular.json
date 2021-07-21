@@ -40,7 +40,9 @@
               "./node_modules/jquery/dist/jquery.min.js",
               "./node_modules/bootstrap/dist/css/bootstrap.min.css",
               "./node_modules/popper.js/dist/umd/popper.min.js",
-              "./node_modules/aos/dist/aos.js"
+              "./node_modules/aos/dist/aos.js",
+              "node_modules/chart.js/dist/Chart.js",
+              "node_modules/chartjs-plugin-datalabels/dist/chartjs-plugin-datalabels.js"
             ]
           },
           "configurations": {
