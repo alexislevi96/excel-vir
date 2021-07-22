@@ -10,7 +10,7 @@
                 Alumnos aprobados: {{_curso.totalAprob}} de {{_curso.totalAlumnos}} alumnos
             </div>
         </div>
-        <h3>Final practico</h3>
+        <h3>Final practico:</h3>
         <!-- <hr style="width: 15%; margin-bottom: 20px;"> -->
         <div class="col col-12 col-md-6 col-sm-12 col-xs-12">
             <div class="alert alert-success">
@@ -22,7 +22,7 @@
                 Alumnos: {{_curso.totalAlumnosFinalPract}} de {{_curso.totalAlumnos}} alumnos
             </div>
         </div>
-        <h3>Final Teorico</h3>
+        <h3>Final Teorico:</h3>
         <!-- <hr style="width: 15%; margin-bottom: 20px;"> -->
         <div class="col col-12 col-md-6 col-sm-12 col-xs-12">
             <div class="alert alert-success">
@@ -33,6 +33,14 @@
             <div class="alert alert-light">
                 Alumnos: {{_curso.totalAlumnosFinalTeo}} de {{_curso.totalAlumnos}} alumnos
             </div>
+        </div>
+        <h3 class="mt-3">Promedio de calificaciones por materia:</h3>
+        <div class="grafico">
+            <ngx-charts-bar-vertical [scheme]="colorScheme" [results]="single" [gradient]="gradient" [xAxis]="showXAxis"
+                [yAxis]="showYAxis" [legend]="showLegend" [showXAxisLabel]="showXAxisLabel"
+                [showYAxisLabel]="showYAxisLabel" [xAxisLabel]="xAxisLabel" [yAxisLabel]="yAxisLabel"
+                (select)="onSelect($event)">
+            </ngx-charts-bar-vertical>
         </div>
     </div>
 </div>
