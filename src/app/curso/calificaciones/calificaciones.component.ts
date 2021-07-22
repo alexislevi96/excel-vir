@@ -20,12 +20,12 @@ export class CalificacionesComponent {
   gradient = false;
   showLegend = true;
   showXAxisLabel = true;
-  xAxisLabel = 'Country';
   showYAxisLabel = true;
-  yAxisLabel = 'Population';
+  xAxisLabel = 'Tema / Dia';
+  yAxisLabel = 'Promedio calificacion por tema';
 
   colorScheme = {
-    domain: ['#5AA454', '#A10A28', '#C7B42C', '#AAAAAA']
+    domain: ['#EDBB99', '#F9E79F', '#AED6F1', '#D2B4DE', '#F5B7B1', '#ABEBC6']
   };
 
   constructor(public _curso: CursoService) {
@@ -43,7 +43,7 @@ export class CalificacionesComponent {
     const data = [];
     for (let i = 0; i < this._curso.arrayClases.length; i++) {
       data.push({
-        "name": this._curso.arrayCalificaciones[i].clase + '/' + this._curso.arrayFechas[i],
+        "name": this._curso.arrayCalificaciones[i].clase + ' / ' + this._curso.arrayFechas[i],
         "value": this._curso.arrayCalificaciones[i].total / this._curso.totalAlumnos
       })
     }

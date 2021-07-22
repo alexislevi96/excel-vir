@@ -1,36 +1,28 @@
 <div class="m-4">
   <div class="row">
-    <div class="col col-md-6 col-sm-12 col-xs-12">
+    <div class="col col-md-6 col-sm-6 col-xs-12 col-12">
       <div class="alert alertPersonalizada borderBlue">
         Promedio de asistencia total:<strong class="textNegrita">
           {{ _curso.promAsist.toFixed(2) }}%</strong>
       </div>
+    </div>
+    <div class="col col-md-6 col-sm-6  col-xs-12 col-12">
       <div class="alert alertPersonalizada borderBlue">
         Total de clases:
         <strong class="textNegrita">{{ _curso.totalClass }}</strong>
       </div>
     </div>
-    <div class="col col-md-6 col-6" style="width: 40%;">
-      <ngx-charts-pie-chart class="chartAsist"
-      [view]="view"
-      [scheme]="colorScheme"
-      [results]="single"
-      [gradient]="gradient"
-      [legend]="showLegend"
-      [legendPosition]="legendPosition"
-      [labels]="showLabels"
-      [doughnut]="isDoughnut"
-      (select)="onSelect($event)"
-      (activate)="onActivate($event)"
-      (deactivate)="onDeactivate($event)"
-      >
-    </ngx-charts-pie-chart>
+    <div class="grafico graficoAsist">
+      <ngx-charts-bar-vertical [scheme]="colorScheme" [results]="single" [gradient]="gradient" [xAxis]="showXAxis"
+          [yAxis]="showYAxis" [legend]="showLegend" [showXAxisLabel]="showXAxisLabel"
+          [showYAxisLabel]="showYAxisLabel" [xAxisLabel]="xAxisLabel" [yAxisLabel]="yAxisLabel"
+          (select)="onSelect($event)">
+      </ngx-charts-bar-vertical>
     </div>
     <div class="col col-md-6 col-6">
       
     </div>
     <div class="mb-4">
-      <hr style="width: 15%; margin: 30px auto;">
       <div class="alert alertPersonalizada padding0" style="width: 100%; text-align: center; margin: 0 auto;">
         <div class="headerCard">
           <h3>Lista de alumnos</h3>

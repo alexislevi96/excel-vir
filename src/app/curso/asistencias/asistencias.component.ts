@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { CursoService } from '../../servicios/curso.service';
-import { NgxChartsModule } from '@swimlane/ngx-charts';
-import { single } from './data';
 @Component({
   selector: 'app-asistencias',
   templateUrl: './asistencias.component.html',
@@ -10,34 +8,45 @@ import { single } from './data';
 export class AsistenciasComponent implements OnInit {
 
   constructor(public _curso: CursoService) {
-    Object.assign(this, { single });
+    this.cargarDatos();
+    Object.assign(this, this.single)
   }
 
-   single: any[] = [];
-   view: any = [700, 400];
- 
-   // options
-   gradient: boolean = true;
-   showLegend: boolean = true;
-   showLabels: boolean = true;
-   isDoughnut: boolean = false;
-   legendPosition: any = 'below';
- 
-   colorScheme = {
-     domain: ['#5AA454', '#A10A28', '#C7B42C', '#AAAAAA']
-   };
- 
-   onSelect(data: any): void {
-     console.log('Item clicked', JSON.parse(JSON.stringify(data)));
-   }
- 
-   onActivate(data: any): void {
-     console.log('Activate', JSON.parse(JSON.stringify(data)));
-   }
- 
-   onDeactivate(data: any): void {
-     console.log('Deactivate', JSON.parse(JSON.stringify(data)));
-   }
+  single: any;
+  multi: any = '';
+
+  // view: number[] = [700, 400];
+
+  // options
+  showXAxis = true;
+  showYAxis = true;
+  gradient = false;
+  showLegend = true;
+  showXAxisLabel = true;
+  showYAxisLabel = true;
+  xAxisLabel = 'Dia';
+  yAxisLabel = 'Asistencias por dia';
+
+  colorScheme = {
+    domain: ['#EDBB99', '#F9E79F', '#AED6F1', '#D2B4DE', '#F5B7B1', '#ABEBC6']
+  };
+
+
+  onSelect(event: any) {
+    console.log(event);
+  }
+
+  cargarDatos(): any {
+    const data = [];
+    for (let i = 0; i < this._curso.arrayFechas.length; i++) {
+      data.push({
+        "name": this._curso.arrayFechas[i],
+        "value": this._curso.arrayAsitencias[i]
+      })
+    }
+    console.log(data);
+    this.single = data;
+  }
    //////////////////////////////
   ngOnInit(): void {
   }

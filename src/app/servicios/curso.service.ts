@@ -153,7 +153,7 @@ export class CursoService {
           }
           // total
           for (v = 0; v < this.arrayClases.length; v++) {
-            this.arrayCalificaciones[v].total += Number(this._data.data[alumno][v]) || 0;
+            this.arrayCalificaciones[v].total += Number(this._data.data[alumno][v+1]) || 0;
           }
           j++;
         }

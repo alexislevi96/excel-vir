@@ -23,9 +23,9 @@
 
   color: white;
   font-weight: bold;
-  border-radius: 5px;
+  border-radius: 0px;
   /* margin-bottom: 10px; */
-  background-color: #AED6F1;
+  background-color: #f6b4b4;
   transition: background-color 0.3s ease-in-out;
 }
 .title:hover {
@@ -45,7 +45,7 @@
 } */
 .dropdownContent {
   border-radius: 5px;
-  border-bottom: 4px solid #1F618D;
+  border-bottom: 4px solid #f57a7a;
 }
 /* .dropdownContent {
   padding: 15px 8px;
